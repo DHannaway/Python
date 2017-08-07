@@ -1,4 +1,4 @@
-# file written on 06/08/2017, 23:16:55.
+# file written on 07/08/2017, 12:44:43.
 ccdimage:
   anchor_x: -3.73406e+20 m # (-12.1 kpc)
   anchor_y: -3.73406e+20 m # (-12.1 kpc)
@@ -27,6 +27,6 @@ dust:
   band: V # (V)
 hydro:
   active: false # (false)
-number of photons: 100000 # (100000)
+number of photons: 50000 # (50000)
 output_folder: . # (.)
 random_seed: 42 # (42)
