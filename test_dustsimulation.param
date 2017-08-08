@@ -16,7 +16,7 @@ continuousphotonsource:
 densityfunction:
   h_ISM: 0.22 kpc
   n_0: 1. cm^-3
-  r_ISM: 6.0 kpc
+  r_ISM: 6. kpc
 densitygrid:
   box_anchor: [-12. kpc, -12. kpc, -12. kpc]
   box_sides: [24. kpc, 24. kpc, 24. kpc]
@@ -26,6 +26,7 @@ dust:
   band: V
 hydro:
   active: false
-number of photons: 600000
+
+number of photons: 500000
 output_folder: .
 random_seed: 42

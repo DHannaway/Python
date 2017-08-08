@@ -15,7 +15,7 @@ h_ISM=input("Enter the value of h_ISM (kpc): ")	# h_ISM
 r_ISM=input("Enter the value of r_ISM (kpc): ")	# r_ISM
 n_0=input("Enter the value of n_0 (cm^-3): ")	# n_0
 
-nphotons=500000
+nphotons=600000
 
 #Replace the old .param file with a new one with the entered values
 with open('test_dustsimulation_original.param') as g:
@@ -36,7 +36,7 @@ for i in range(0,len(lines)):
 	elif i==17:
 		h.write('  n_0: '+n_0+' cm^-3\n' )
 	elif i==28:
-		h.write('number of photons: '+nphotons+'\n'  )
+		h.write('number of photons: '+str(nphotons)+'\n'  )
 	else:
 		h.write(lines[i])
 h.close()
