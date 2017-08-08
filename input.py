@@ -4,17 +4,18 @@ import random
 import os
 
 #Path to the executable file:
-codepath='C:\\Users\\Dan\\Desktop\\"Summer_Project"\\testDustSimulation.exe'
+codepath='C:\\Users\\Dan\\Documents\\GitHub\\Python\\'
+filename='CMacIonize.exe --params test_dustsimulation.param --dusty-radiative-transfer --threads 4'
 
 #Enter new values for the parameters
-B_T=input("Enter the value of B_over_T (Original value: 0.2): ")	# B_over_T
-h_stars=input("Enter the value of h_stars (Original value: 0.6 kpc): ")	# h_stars
-r_stars=input("Enter the value of r_stars (Original value: 5. kpc): ")	# r_stars
-h_ISM=input("Enter the value of h_ISM (Original value: 0.22 kpc): ")	# h_ISM
-r_ISM=input("Enter the value of r_ISM (Original value: 6.0 kpc): ")	# r_ISM
-n_0=input("Enter the value of n_0 (Original value: 1. cm^-3): ")	# n_0
+B_T=input("Enter the value of B_over_T: ")	# B_over_T
+h_stars=input("Enter the value of h_stars (kpc): ")	# h_stars
+r_stars=input("Enter the value of r_stars (kpc): ")	# r_stars
+h_ISM=input("Enter the value of h_ISM (kpc): ")	# h_ISM
+r_ISM=input("Enter the value of r_ISM (kpc): ")	# r_ISM
+n_0=input("Enter the value of n_0 (cm^-3): ")	# n_0
 
-nphotons=input("Enter the number of photons to simulate (Original value 50,000): ")
+nphotons=500000
 
 #Replace the old .param file with a new one with the entered values
 with open('test_dustsimulation_original.param') as g:
@@ -41,13 +42,13 @@ for i in range(0,len(lines)):
 h.close()
 
 #Input this new file into the testDustSimulation program and compile
-os.system(codepath)  
+os.system(codepath+filename)  
 
 #Input the created binary file, and plot as an image
 image = np.fromfile("test_dustsimulation_output.dat", dtype = np.float64)
 image = image.reshape((200, 200))
 fig, ax = plt.subplots()
 ax.matshow(np.transpose(image), cmap='Greys_r')
-plt.text(5,40,"B_T ="+str(B_T)+'\n'+"h_stars ="+str(h_stars)+'\n'+"r_stars ="+str(r_stars)+'\n'+"h_ISM ="+str(h_ISM),color='w')
+plt.text(5,60,"B_T ="+str(B_T)+'\n'+"h_stars ="+str(h_stars)+'\n'+"r_stars ="+str(r_stars)+'\n'+"h_ISM ="+str(h_ISM)+'\n'+"r_ISM ="+str(r_ISM)+'\n'+"n0 ="+str(n_0),color='w')
 plt.show()
 
