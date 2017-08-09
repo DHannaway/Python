@@ -10,13 +10,13 @@ ccdimage:
   view_phi: 0 degrees
   view_theta: 89.7 degrees
 continuousphotonsource:
-  B_over_T: 0.2
-  h_stars: 0.6 kpc
-  r_stars: 5.0 kpc
+  B_over_T: 0.36
+  h_stars: 0.41 kpc
+  r_stars: 0.52 kpc
 densityfunction:
-  h_ISM: 0.5 kpc
-  n_0: 1 cm^-3
-  r_ISM: 6.0 kpc
+  h_ISM: 0.61 kpc
+  n_0: 0.96 cm^-3
+  r_ISM: 1.32 kpc
 densitygrid:
   box_anchor: [-12. kpc, -12. kpc, -12. kpc]
   box_sides: [24. kpc, 24. kpc, 24. kpc]
@@ -26,6 +26,6 @@ dust:
   band: V
 hydro:
   active: false
-number of photons: 600000
+number of photons: 10000
 output_folder: .
 random_seed: 42
