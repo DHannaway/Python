@@ -5,7 +5,7 @@ import os
 from tkinter import *
 
 #Path to the executable file:
-codepath='C:\\Users\\Dan\\Documents\\GitHub\\Python\\'
+codepath='C:\\Users\\Bert\\Documents\\GitHub\\Python\\Jupyter\\'
 filename='CMacIonize.exe --params test_dustsimulation.param --dusty-radiative-transfer --threads 8'
 
 def simulation():

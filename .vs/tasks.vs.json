@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-slider_input",
+      "appliesTo": "Jupyter/slider_input.py",
+      "type": "command"
+    }
+  ]
+}
