@@ -3,20 +3,12 @@ import matplotlib.pyplot as plt
 import random
 import os
 from tkinter import *
-from tkinter.ttk import Progressbar
 
 #Path to the executable file:
 codepath='C:\\Users\\Dan\\Documents\\GitHub\\Python\\'
 filename='CMacIonize.exe --params test_dustsimulation.param --dusty-radiative-transfer --threads 8'
 
 def simulation():
-
-	root=Tk()
-	
-	pb = Progressbar(root,orient="horizontal",length=200,mode="indeterminate")
-	pb.pack()
-	pb.start()
-
 	B_T=w1.get()
 	h_stars=w2.get()
 	r_stars=w3.get()
@@ -50,12 +42,8 @@ def simulation():
 			h.write(lines[i])
 	h.close()
 
-	pb.update_idletasks()
-	pb.update()
-
 	#Input this new file into the testDustSimulation program and compile
 	os.system(codepath+filename)  
-
 
 	#Input the created binary file, and plot as an image
 	image = np.fromfile("test_dustsimulation_output.dat", dtype = np.float64)
@@ -73,8 +61,8 @@ def simulation():
 
 	plt.xticks(tick_locs_x, xtick_lbls,rotation=0,fontsize=10)
 	plt.yticks(tick_locs_y, ytick_lbls,rotation=0,fontsize=10)
-
 	plt.show()
+
 
 master = Tk()
 w1 = Scale(master, from_=0.0, to=1.0,resolution=0.01, orient=HORIZONTAL,length=500,label="B/T")
